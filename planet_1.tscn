@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://bc2cs4uiegmqc"]
+
+[ext_resource type="PackedScene" uid="uid://ct35eef8jtivh" path="res://obstacle.tscn" id="1_uvlb6"]
+[ext_resource type="Texture2D" uid="uid://dkhyc4v21gjrk" path="res://sprites/tope02.png" id="2_r4qic"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rhvix"]
+radius = 136.501
+
+[node name="StaticBody2D" instance=ExtResource("1_uvlb6")]
+
+[node name="Icon" parent="." index="0"]
+texture = ExtResource("2_r4qic")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(-7.5, -2.5)
+shape = SubResource("CircleShape2D_rhvix")
