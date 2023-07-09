@@ -72,8 +72,8 @@ func _on_body_entered(body):
 		
 	elif body.name != "table":
 		current_score -= POINT_PER_HIT
-		print(body.name)
 		body.hit(str(-POINT_PER_HIT))
+		$obstacle.play()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -95,16 +95,19 @@ func _process(delta):
 		if start:
 			start = false
 			apply_impulse(Vector2(0, INITIAL_IMPULSE))
+			$start.play()
 			
 	if Input.is_action_just_pressed("left hand"):
 		if current_left_cooldown <= 0.0:
 			apply_impulse(Vector2(-IMPULSE_X, IMPULSE_Y))
 			current_left_cooldown = LEFT_COOLDOWN
+			$hit.play()
 			
 	if Input.is_action_just_pressed("right hand"):
 		if current_right_cooldown <= 0.0:
 			apply_impulse(Vector2(IMPULSE_X, IMPULSE_Y))
 			current_right_cooldown = RIGHT_COOLDOWN
+			$hit.play()
 			
 	if Input.is_action_just_pressed("fist"):
 		if current_fist_cooldown <= 0.0:
@@ -114,6 +117,7 @@ func _process(delta):
 			apply_impulse(Vector2(0, IMPULSE_Y/10))
 			current_fist_cooldown = FIST_COOLDOWN
 			jump_time = JUMP_DURATION
+			$hit.play()
 			
 	if jump_time <= 0:
 		$Icon.show()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bfko88rr4juxr"]
+[gd_scene load_steps=18 format=3 uid="uid://bfko88rr4juxr"]
 
 [ext_resource type="Script" path="res://scripts/ball.gd" id="1_6mvbm"]
 [ext_resource type="Texture2D" uid="uid://c6b3c7y1ug3tc" path="res://sprites/ball.png" id="2_7sy5k"]
@@ -12,6 +12,9 @@
 [ext_resource type="Texture2D" uid="uid://dk7ye37hj1p7" path="res://sprites/hand_hit_lines.png" id="7_ujcc6"]
 [ext_resource type="Texture2D" uid="uid://bd2emnb481qmt" path="res://sprites/puno.png" id="8_aq7t5"]
 [ext_resource type="Texture2D" uid="uid://r4cetu2v0vpd" path="res://sprites/fist_hit_lines.png" id="10_5voyd"]
+[ext_resource type="AudioStream" uid="uid://q4s7lul68q6y" path="res://sounds/toquemp3.mp3" id="13_57xrm"]
+[ext_resource type="AudioStream" uid="uid://cxrjx3edellde" path="res://sounds/laser3mp3.mp3" id="14_wuuof"]
+[ext_resource type="AudioStream" uid="uid://bka2lrg3gveij" path="res://sounds/muellebolamp3.mp3" id="15_owwbt"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_kfcsl"]
 bounce = 0.1
@@ -84,5 +87,14 @@ texture = ExtResource("8_aq7t5")
 position = Vector2(16.6666, -153.333)
 scale = Vector2(1.6, 1.6)
 texture = ExtResource("10_5voyd")
+
+[node name="hit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_57xrm")
+
+[node name="obstacle" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_wuuof")
+
+[node name="start" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_owwbt")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

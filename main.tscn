@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://c4jqtyut40wq8"]
+[gd_scene load_steps=7 format=3 uid="uid://c4jqtyut40wq8"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_ht0y1"]
 [ext_resource type="PackedScene" uid="uid://bfko88rr4juxr" path="res://ball.tscn" id="1_j0oqw"]
 [ext_resource type="PackedScene" uid="uid://cyn2e7eia1dwt" path="res://table.tscn" id="3_7ekdi"]
 [ext_resource type="PackedScene" uid="uid://dey4wwsjnnpfm" path="res://goal.tscn" id="4_3a6km"]
 [ext_resource type="PackedScene" uid="uid://dylh4d51pb3fj" path="res://start.tscn" id="5_phlgv"]
+[ext_resource type="AudioStream" uid="uid://67vnlan3a2sk" path="res://sounds/sonidofondointromp3.mp3" id="6_inunh"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_ht0y1")
@@ -24,3 +25,6 @@ position = Vector2(-516, 4547)
 
 [node name="start" parent="." instance=ExtResource("5_phlgv")]
 position = Vector2(1210, 3522)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_inunh")
