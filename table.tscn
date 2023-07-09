@@ -75,7 +75,7 @@ scale = Vector2(0.7, 0.49)
 position = Vector2(22, -1578)
 scale = Vector2(0.7, 0.49)
 
-[node name="StaticBody2D9" parent="." instance=ExtResource("6_8ge3t")]
+[node name="table" parent="." instance=ExtResource("6_8ge3t")]
 position = Vector2(4, 874)
 scale = Vector2(-0.7, 0.49)
 

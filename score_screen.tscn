@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://btcxbpav4x7au"]
+
+[ext_resource type="Texture2D" uid="uid://c6b3c7y1ug3tc" path="res://sprites/ball.png" id="1_7gxod"]
+[ext_resource type="Script" path="res://scripts/score_screen.gd" id="1_qvxgi"]
+
+[node name="ScoreScreen" type="CanvasLayer"]
+script = ExtResource("1_qvxgi")
+
+[node name="ScoreLabel" type="Label" parent="."]
+offset_left = 64.0
+offset_right = 107.0
+offset_bottom = 26.0
+text = "Score:"
+
+[node name="ScorePoints" type="Label" parent="."]
+offset_left = 120.0
+offset_right = 163.0
+offset_bottom = 26.0
+text = "0"
+
+[node name="TriesLabel" type="Label" parent="."]
+offset_left = 64.0
+offset_top = 32.0
+offset_right = 112.0
+offset_bottom = 58.0
+text = "Tries:"
+
+[node name="Live1" type="Sprite2D" parent="."]
+position = Vector2(128, 40)
+scale = Vector2(0.083, 0.083)
+texture = ExtResource("1_7gxod")
+
+[node name="Live2" type="Sprite2D" parent="."]
+position = Vector2(176, 40)
+scale = Vector2(0.083, 0.083)
+texture = ExtResource("1_7gxod")
+
+[node name="Live3" type="Sprite2D" parent="."]
+position = Vector2(224, 40)
+scale = Vector2(0.083, 0.083)
+texture = ExtResource("1_7gxod")
