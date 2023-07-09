@@ -8,7 +8,7 @@ var IMPULSE_Y: float = -40.0
 var LEFT_COOLDOWN: float = 1
 var RIGHT_COOLDOWN: float = 1
 var FIST_COOLDOWN: float = 1
-var JUMP_DURATION: float = 1.1
+var JUMP_DURATION: float = 0.5
 
 # Game start
 var INITIAL_IMPULSE: float = -2000
@@ -23,8 +23,10 @@ var jump_time: float
 
 var start: bool = true
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$Sprite2D.hide()
 	current_left_cooldown = 0.0
 	current_right_cooldown = 0.0
 	current_fist_cooldown = 0.0
@@ -70,10 +72,14 @@ func _process(delta):
 			
 	if Input.is_action_just_pressed("fist"):
 		if current_fist_cooldown <= 0.0:
+			$Icon.hide()
+			$Sprite2D.show()
 			set_collision_mask_value(3, false)
 			apply_impulse(Vector2(0, IMPULSE_Y/10))
 			current_fist_cooldown = FIST_COOLDOWN
 			jump_time = JUMP_DURATION
 			
 	if jump_time <= 0:
+		$Icon.show()
+		$Sprite2D.hide()
 		set_collision_mask_value(3, true)
