@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://bfko88rr4juxr"]
+
+[ext_resource type="Script" path="res://scripts/ball.gd" id="1_6mvbm"]
+[ext_resource type="Texture2D" uid="uid://c6b3c7y1ug3tc" path="res://sprites/ball.png" id="2_7sy5k"]
+[ext_resource type="Script" path="res://scripts/camera.gd" id="3_0i1a2"]
+[ext_resource type="PackedScene" uid="uid://io36el0poy77" path="res://start_screen.tscn" id="4_022go"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_kfcsl"]
+bounce = 0.1
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8kk11"]
+radius = 70.0
+
+[node name="RigidBody2D" type="RigidBody2D"]
+collision_mask = 15
+mass = 0.2
+physics_material_override = SubResource("PhysicsMaterial_kfcsl")
+gravity_scale = 1.5
+max_contacts_reported = 2
+contact_monitor = true
+script = ExtResource("1_6mvbm")
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(2.98023e-08, 2.98023e-08)
+scale = Vector2(0.342, 0.342)
+texture = ExtResource("2_7sy5k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_8kk11")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.35, 0.35)
+position_smoothing_enabled = true
+script = ExtResource("3_0i1a2")
+
+[node name="CanvasLayer" parent="Camera2D" instance=ExtResource("4_022go")]
+offset = Vector2(570, 150)
+scale = Vector2(3, 3)
+transform = Transform2D(3, 0, 0, 3, 570, 150)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
