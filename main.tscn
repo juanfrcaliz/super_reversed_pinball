@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cyn2e7eia1dwt" path="res://table.tscn" id="3_7ekdi"]
 [ext_resource type="PackedScene" uid="uid://dey4wwsjnnpfm" path="res://goal.tscn" id="4_3a6km"]
 [ext_resource type="PackedScene" uid="uid://dylh4d51pb3fj" path="res://start.tscn" id="5_phlgv"]
-[ext_resource type="AudioStream" uid="uid://67vnlan3a2sk" path="res://sounds/sonidofondointromp3.mp3" id="6_inunh"]
+[ext_resource type="AudioStream" uid="uid://dno8ra3kolrlv" path="res://sounds/sonidofondointromp3.mp3" id="6_inunh"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_ht0y1")

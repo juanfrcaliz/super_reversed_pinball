@@ -2,7 +2,7 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-uid="uid://67vnlan3a2sk"
+uid="uid://dno8ra3kolrlv"
 path="res://.godot/imported/sonidofondointromp3.mp3-257ab355dd4be2a81432b014f5631ea0.mp3str"
 
 [deps]
@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/sonidofondointromp3.mp3-257ab355dd4be2a81432b
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
 bpm=0
 beat_count=0

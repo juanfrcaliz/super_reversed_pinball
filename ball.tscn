@@ -13,9 +13,9 @@
 [ext_resource type="Texture2D" uid="uid://dk7ye37hj1p7" path="res://sprites/hand_hit_lines.png" id="7_ujcc6"]
 [ext_resource type="Texture2D" uid="uid://bd2emnb481qmt" path="res://sprites/puno.png" id="8_aq7t5"]
 [ext_resource type="Texture2D" uid="uid://r4cetu2v0vpd" path="res://sprites/fist_hit_lines.png" id="10_5voyd"]
-[ext_resource type="AudioStream" uid="uid://q4s7lul68q6y" path="res://sounds/toquemp3.mp3" id="13_57xrm"]
-[ext_resource type="AudioStream" uid="uid://cxrjx3edellde" path="res://sounds/laser3mp3.mp3" id="14_wuuof"]
-[ext_resource type="AudioStream" uid="uid://bka2lrg3gveij" path="res://sounds/muellebolamp3.mp3" id="15_owwbt"]
+[ext_resource type="AudioStream" uid="uid://bhgmgdgk367y6" path="res://sounds/toquemp3.mp3" id="13_57xrm"]
+[ext_resource type="AudioStream" uid="uid://cw01h7d4nj0uh" path="res://sounds/laser3mp3.mp3" id="14_wuuof"]
+[ext_resource type="AudioStream" uid="uid://coys2s53pio7p" path="res://sounds/muellebolamp3.mp3" id="15_owwbt"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_kfcsl"]
 bounce = 0.1

@@ -24,7 +24,7 @@ var jump_time: float
 # Game state.
 var start: bool = true
 var in_main_menu: bool = true
-var GAME_OVER_DURATION: float = 40
+var GAME_OVER_DURATION: float = 50
 var game_over: bool = false
 var game_over_countdown: int
 
@@ -33,7 +33,7 @@ var MAX_LIVES: int = 3
 var current_lives: int = MAX_LIVES
 
 # Score
-var POINT_PER_HIT: int = 20
+var POINT_PER_HIT: int = 30
 var INITIAL_SCORE: int = 1000
 var current_score = INITIAL_SCORE
 var max_score: int = 0
