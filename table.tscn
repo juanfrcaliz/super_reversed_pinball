@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cyn2e7eia1dwt"]
+[gd_scene load_steps=9 format=3 uid="uid://cyn2e7eia1dwt"]
 
 [ext_resource type="Texture2D" uid="uid://dmgolg3h2saat" path="res://sprites/tablero.png" id="1_3g6qo"]
 [ext_resource type="PackedScene" uid="uid://bc2cs4uiegmqc" path="res://planet_1.tscn" id="2_xuuhy"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://2higpyp3lr3h" path="res://triangular_rocket.tscn" id="5_n17sg"]
 [ext_resource type="PackedScene" uid="uid://c6nqy3tbg4kgp" path="res://rectangular_rocket.tscn" id="6_8ge3t"]
 [ext_resource type="PackedScene" uid="uid://bftkxw8iw7gm4" path="res://ufo.tscn" id="7_gfqyk"]
+[ext_resource type="PackedScene" uid="uid://04g07e7p3rca" path="res://flipper.tscn" id="8_c62eb"]
 
 [node name="StaticBody2D" type="StaticBody2D"]
 collision_layer = 2
@@ -85,3 +86,10 @@ scale = Vector2(0.6, 0.6)
 [node name="StaticBody2D14" parent="." instance=ExtResource("7_gfqyk")]
 position = Vector2(-42, 1230)
 scale = Vector2(0.6, 0.6)
+
+[node name="StaticBody2D18" parent="." instance=ExtResource("8_c62eb")]
+position = Vector2(155, 1805)
+
+[node name="StaticBody2D19" parent="." instance=ExtResource("8_c62eb")]
+position = Vector2(-244, 1811)
+scale = Vector2(-1, 1)

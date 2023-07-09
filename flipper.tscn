@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://04g07e7p3rca"]
+
+[ext_resource type="PackedScene" uid="uid://ct35eef8jtivh" path="res://obstacle.tscn" id="1_36ngl"]
+[ext_resource type="Texture2D" uid="uid://cky5l8ku567a3" path="res://sprites/flipper_derecho.png" id="2_kvo5n"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_eelv3"]
+radius = 51.923
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xpp3n"]
+radius = 35.0
+
+[node name="StaticBody2D" instance=ExtResource("1_36ngl")]
+
+[node name="Icon" parent="." index="0"]
+texture = ExtResource("2_kvo5n")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(98, -83)
+rotation = 0.937389
+shape = SubResource("CircleShape2D_eelv3")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." index="2"]
+position = Vector2(-112, 77)
+shape = SubResource("CircleShape2D_xpp3n")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="3"]
+polygon = PackedVector2Array(-137, 52, 64, -121, 127, -40, -94, 107)
