@@ -1,13 +1,46 @@
-[gd_scene load_steps=6 format=3 uid="uid://c4jqtyut40wq8"]
+[gd_scene load_steps=7 format=3 uid="uid://c4jqtyut40wq8"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_ht0y1"]
 [ext_resource type="PackedScene" uid="uid://bfko88rr4juxr" path="res://ball.tscn" id="1_j0oqw"]
+[ext_resource type="PackedScene" uid="uid://ct35eef8jtivh" path="res://obstacle.tscn" id="2_v5u03"]
 [ext_resource type="PackedScene" uid="uid://cyn2e7eia1dwt" path="res://table.tscn" id="3_7ekdi"]
 [ext_resource type="PackedScene" uid="uid://dey4wwsjnnpfm" path="res://goal.tscn" id="4_3a6km"]
 [ext_resource type="PackedScene" uid="uid://dylh4d51pb3fj" path="res://start.tscn" id="5_phlgv"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_ht0y1")
+
+[node name="StaticBody2D" parent="." instance=ExtResource("2_v5u03")]
+z_index = 1
+position = Vector2(-17, -424)
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("2_v5u03")]
+z_index = 1
+position = Vector2(544, 1406)
+
+[node name="StaticBody2D3" parent="." instance=ExtResource("2_v5u03")]
+z_index = 1
+position = Vector2(-456, 828)
+
+[node name="StaticBody2D4" parent="." instance=ExtResource("2_v5u03")]
+z_index = 1
+position = Vector2(716, 2345)
+
+[node name="StaticBody2D5" parent="." instance=ExtResource("2_v5u03")]
+z_index = 1
+position = Vector2(-530, 2263)
+
+[node name="StaticBody2D6" parent="." instance=ExtResource("2_v5u03")]
+z_index = 1
+position = Vector2(610, 192)
+
+[node name="StaticBody2D7" parent="." instance=ExtResource("2_v5u03")]
+z_index = 1
+position = Vector2(-802, -343)
+
+[node name="StaticBody2D8" parent="." instance=ExtResource("2_v5u03")]
+z_index = 1
+position = Vector2(-498, -1541)
 
 [node name="StaticBody2D9" parent="." instance=ExtResource("3_7ekdi")]
 light_mask = 0
