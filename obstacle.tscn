@@ -6,7 +6,7 @@
 bounce = 1.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_efkiv"]
-size = Vector2(127, 127)
+size = Vector2(46, 23.25)
 
 [node name="StaticBody2D" type="StaticBody2D"]
 collision_layer = 4
