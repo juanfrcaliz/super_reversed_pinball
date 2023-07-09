@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://bfko88rr4juxr"]
+[gd_scene load_steps=14 format=3 uid="uid://bfko88rr4juxr"]
 
 [ext_resource type="Script" path="res://scripts/ball.gd" id="1_6mvbm"]
 [ext_resource type="Texture2D" uid="uid://c6b3c7y1ug3tc" path="res://sprites/ball.png" id="2_7sy5k"]
 [ext_resource type="Script" path="res://scripts/camera.gd" id="3_0i1a2"]
+[ext_resource type="Texture2D" uid="uid://cuiv0jkutes6o" path="res://sprites/ball_jump.png" id="3_5xaux"]
 [ext_resource type="PackedScene" uid="uid://io36el0poy77" path="res://start_screen.tscn" id="4_022go"]
 [ext_resource type="Texture2D" uid="uid://bviy8wiwbtmq4" path="res://sprites/mano_derecha.png" id="5_3mjqh"]
 [ext_resource type="Script" path="res://scripts/hands.gd" id="5_nxxlv"]
@@ -30,6 +31,10 @@ script = ExtResource("1_6mvbm")
 position = Vector2(2.98023e-08, 2.98023e-08)
 scale = Vector2(0.342, 0.342)
 texture = ExtResource("2_7sy5k")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.11, 0.11)
+texture = ExtResource("3_5xaux")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_8kk11")
@@ -63,7 +68,7 @@ scale = Vector2(0.3, 0.3)
 texture = ExtResource("5_urjbp")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Camera2D/CanvasLayer2/ManoIzquieda"]
-position = Vector2(270, -113.333)
+position = Vector2(310, -113.333)
 scale = Vector2(-1.6, -1.6)
 texture = ExtResource("7_ujcc6")
 
@@ -76,5 +81,7 @@ texture = ExtResource("8_aq7t5")
 position = Vector2(16.6666, -153.333)
 scale = Vector2(1.6, 1.6)
 texture = ExtResource("10_5voyd")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
