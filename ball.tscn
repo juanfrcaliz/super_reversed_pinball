@@ -1,9 +1,10 @@
-[gd_scene load_steps=18 format=3 uid="uid://bfko88rr4juxr"]
+[gd_scene load_steps=19 format=3 uid="uid://bfko88rr4juxr"]
 
 [ext_resource type="Script" path="res://scripts/ball.gd" id="1_6mvbm"]
 [ext_resource type="Texture2D" uid="uid://c6b3c7y1ug3tc" path="res://sprites/ball.png" id="2_7sy5k"]
 [ext_resource type="Script" path="res://scripts/camera.gd" id="3_0i1a2"]
 [ext_resource type="Texture2D" uid="uid://cuiv0jkutes6o" path="res://sprites/ball_jump.png" id="3_5xaux"]
+[ext_resource type="Texture2D" uid="uid://c2p83y5sivb2c" path="res://sprites/explosion.png" id="4_2dhrl"]
 [ext_resource type="PackedScene" uid="uid://io36el0poy77" path="res://start_screen.tscn" id="4_022go"]
 [ext_resource type="Texture2D" uid="uid://bviy8wiwbtmq4" path="res://sprites/mano_derecha.png" id="5_3mjqh"]
 [ext_resource type="Script" path="res://scripts/hands.gd" id="5_nxxlv"]
@@ -29,6 +30,7 @@ physics_material_override = SubResource("PhysicsMaterial_kfcsl")
 gravity_scale = 1.5
 max_contacts_reported = 2
 contact_monitor = true
+freeze_mode = 1
 script = ExtResource("1_6mvbm")
 
 [node name="Icon" type="Sprite2D" parent="."]
@@ -39,6 +41,12 @@ texture = ExtResource("2_7sy5k")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.11, 0.11)
 texture = ExtResource("3_5xaux")
+
+[node name="Explosion" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-0.999969, 0)
+scale = Vector2(0.411667, 0.411667)
+texture = ExtResource("4_2dhrl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_8kk11")

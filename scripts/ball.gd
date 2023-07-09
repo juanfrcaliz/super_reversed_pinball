@@ -24,13 +24,16 @@ var jump_time: float
 # Game state.
 var start: bool = true
 var in_main_menu: bool = true
+var GAME_OVER_DURATION: float = 40
+var game_over: bool = false
+var game_over_countdown: int
 
 # Number of balls.
 var MAX_LIVES: int = 3
 var current_lives: int = MAX_LIVES
 
 # Score
-var POINT_PER_HIT: int = 100
+var POINT_PER_HIT: int = 20
 var INITIAL_SCORE: int = 1000
 var current_score = INITIAL_SCORE
 var max_score: int = 0
@@ -61,6 +64,7 @@ func _ready():
 
 
 func _on_body_entered(body):
+	
 	if body.name == "goal":
 		start = true
 		global_position.x = INITIAL_POSITION_X
@@ -74,10 +78,27 @@ func _on_body_entered(body):
 		current_score -= POINT_PER_HIT
 		body.hit(str(-POINT_PER_HIT))
 		$obstacle.play()
+		if current_score <= 0:
+			set_freeze_enabled(true)
+			$Explosion.show()
+			game_over = true
+			game_over_countdown = GAME_OVER_DURATION
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if game_over:
+		game_over_countdown -= delta
+		if game_over_countdown <= 0:
+			get_node("Camera2D/ScoreScreen/Live1").visible = false
+			get_node("Camera2D/ScoreScreen").visible = false
+			get_node("Camera2D/CanvasLayer").visible = true
+			if current_score > max_score:
+				max_score = current_score
+			in_main_menu = true
+			game_over = false
+			$Explosion.hide()
+	
 	if in_main_menu:
 		return
 		
@@ -125,6 +146,7 @@ func _process(delta):
 		set_collision_mask_value(3, true)
 		
 func init_ball():
+	game_over = false
 	current_left_cooldown = 0.0
 	current_right_cooldown = 0.0
 	current_fist_cooldown = 0.0
