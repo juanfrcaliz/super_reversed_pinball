@@ -14,7 +14,7 @@ z_index = 1
 position = Vector2(1306, 3458)
 gravity_scale = 0.6
 
-[node name="StaticBody2D9" parent="." instance=ExtResource("3_7ekdi")]
+[node name="table" parent="." instance=ExtResource("3_7ekdi")]
 light_mask = 0
 visibility_layer = 2
 scale = Vector2(2, 2)

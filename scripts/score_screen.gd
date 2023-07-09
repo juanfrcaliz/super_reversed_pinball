@@ -1,11 +1,12 @@
-extends StaticBody2D
+extends CanvasLayer
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	set_collision_layer(3)
+	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	get_node("ScorePoints").text = str(get_parent().get_parent().current_score)
+	

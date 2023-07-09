@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bfko88rr4juxr"]
+[gd_scene load_steps=15 format=3 uid="uid://bfko88rr4juxr"]
 
 [ext_resource type="Script" path="res://scripts/ball.gd" id="1_6mvbm"]
 [ext_resource type="Texture2D" uid="uid://c6b3c7y1ug3tc" path="res://sprites/ball.png" id="2_7sy5k"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://io36el0poy77" path="res://start_screen.tscn" id="4_022go"]
 [ext_resource type="Texture2D" uid="uid://bviy8wiwbtmq4" path="res://sprites/mano_derecha.png" id="5_3mjqh"]
 [ext_resource type="Script" path="res://scripts/hands.gd" id="5_nxxlv"]
+[ext_resource type="PackedScene" path="res://score_screen.tscn" id="5_s1kg5"]
 [ext_resource type="Texture2D" uid="uid://b1lli3c78unbq" path="res://sprites/mano_izquieda.png" id="5_urjbp"]
 [ext_resource type="Texture2D" uid="uid://dk7ye37hj1p7" path="res://sprites/hand_hit_lines.png" id="7_ujcc6"]
 [ext_resource type="Texture2D" uid="uid://bd2emnb481qmt" path="res://sprites/puno.png" id="8_aq7t5"]
@@ -43,6 +44,8 @@ shape = SubResource("CircleShape2D_8kk11")
 zoom = Vector2(0.35, 0.35)
 position_smoothing_enabled = true
 script = ExtResource("3_0i1a2")
+
+[node name="ScoreScreen" parent="Camera2D" instance=ExtResource("5_s1kg5")]
 
 [node name="CanvasLayer" parent="Camera2D" instance=ExtResource("4_022go")]
 offset = Vector2(570, 150)
@@ -81,7 +84,5 @@ texture = ExtResource("8_aq7t5")
 position = Vector2(16.6666, -153.333)
 scale = Vector2(1.6, 1.6)
 texture = ExtResource("10_5voyd")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
