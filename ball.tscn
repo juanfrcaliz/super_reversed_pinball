@@ -1,9 +1,15 @@
-[gd_scene load_steps=7 format=3 uid="uid://bfko88rr4juxr"]
+[gd_scene load_steps=13 format=3 uid="uid://bfko88rr4juxr"]
 
 [ext_resource type="Script" path="res://scripts/ball.gd" id="1_6mvbm"]
 [ext_resource type="Texture2D" uid="uid://c6b3c7y1ug3tc" path="res://sprites/ball.png" id="2_7sy5k"]
 [ext_resource type="Script" path="res://scripts/camera.gd" id="3_0i1a2"]
 [ext_resource type="PackedScene" uid="uid://io36el0poy77" path="res://start_screen.tscn" id="4_022go"]
+[ext_resource type="Texture2D" uid="uid://bviy8wiwbtmq4" path="res://sprites/mano_derecha.png" id="5_3mjqh"]
+[ext_resource type="Script" path="res://scripts/hands.gd" id="5_nxxlv"]
+[ext_resource type="Texture2D" uid="uid://b1lli3c78unbq" path="res://sprites/mano_izquieda.png" id="5_urjbp"]
+[ext_resource type="Texture2D" uid="uid://dk7ye37hj1p7" path="res://sprites/hand_hit_lines.png" id="7_ujcc6"]
+[ext_resource type="Texture2D" uid="uid://bd2emnb481qmt" path="res://sprites/puno.png" id="8_aq7t5"]
+[ext_resource type="Texture2D" uid="uid://r4cetu2v0vpd" path="res://sprites/fist_hit_lines.png" id="10_5voyd"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_kfcsl"]
 bounce = 0.1
@@ -37,5 +43,38 @@ script = ExtResource("3_0i1a2")
 offset = Vector2(570, 150)
 scale = Vector2(3, 3)
 transform = Transform2D(3, 0, 0, 3, 570, 150)
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="Camera2D"]
+script = ExtResource("5_nxxlv")
+
+[node name="ManoDerecha" type="Sprite2D" parent="Camera2D/CanvasLayer2"]
+position = Vector2(1136, 478)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("5_3mjqh")
+
+[node name="Sprite2D" type="Sprite2D" parent="Camera2D/CanvasLayer2/ManoDerecha"]
+position = Vector2(-260, -110)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("7_ujcc6")
+
+[node name="ManoIzquieda" type="Sprite2D" parent="Camera2D/CanvasLayer2"]
+position = Vector2(11, 494)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("5_urjbp")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Camera2D/CanvasLayer2/ManoIzquieda"]
+position = Vector2(270, -113.333)
+scale = Vector2(-1.6, -1.6)
+texture = ExtResource("7_ujcc6")
+
+[node name="Puno" type="Sprite2D" parent="Camera2D/CanvasLayer2"]
+position = Vector2(627, 571)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("8_aq7t5")
+
+[node name="Sprite2D" type="Sprite2D" parent="Camera2D/CanvasLayer2/Puno"]
+position = Vector2(16.6666, -153.333)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("10_5voyd")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
